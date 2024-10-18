@@ -1,0 +1,19 @@
+services:
+  studyguide:
+    container_name: ugforemanstudyguide
+    image: portlyjent/dundermufflin:latest    
+    ports:
+      - "53090:10000"
+    environment:
+      - VNC_PASSWD=study
+      - PORT=10000
+      - AUDIO_PORT=1699
+      - WEBSOCKIFY_PORT=6900
+      - VNC_PORT=5900
+      - SCREEN_WIDTH=1024
+      - SCREEN_HEIGHT=768
+      - SCREEN_DEPTH=24
+    volumes:
+      - ./saveDir:/home/ubuntu/.wine/drive_c/MineForemanSG_Data
+    privileged: true
+    
